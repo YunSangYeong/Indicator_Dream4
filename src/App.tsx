@@ -174,7 +174,7 @@ export default function App() {
   const [settings, setSettings] = useState<Settings>({ ...DEFAULT_SETTINGS }),
     [direction, setDirection] = useState<Direction | "ALL">("ALL"),
     [minimum, setMinimum] = useState(3),
-    [mode, setMode] = useState<ViewMode>("threshold");
+    [mode, setMode] = useState<ViewMode>("top5");
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null),
     [busy, setBusy] = useState(false),
     [error, setError] = useState(""),

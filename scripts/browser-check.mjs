@@ -119,7 +119,10 @@ try {
   await page.goto(base);
   await page.getByRole("button", { name: "검색 시작", exact: true }).waitFor();
   assert.equal(calls, 0, "manual search only");
+  assert.equal(await page.getByLabel("검색 대상", { exact: true }).inputValue(), "crypto");
+  assert.equal(await page.getByLabel("표시 모드", { exact: true }).inputValue(), "top5");
   await noOverflow();
+  await select("검색 대상", "all");
   await page.getByRole("button", { name: "검색 시작", exact: true }).click();
   await waitComplete();
   assert.equal(calls, 3, "all eligible symbols evaluated");

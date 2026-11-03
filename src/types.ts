@@ -21,7 +21,7 @@ export interface Settings {
   overbought: number;
 }
 export const DEFAULT_SETTINGS: Settings = {
-  market: "all",
+  market: "crypto",
   interval: "15",
   window: 10,
   minTurnover: 10_000_000,
